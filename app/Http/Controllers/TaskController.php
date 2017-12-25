@@ -42,7 +42,10 @@ class TaskController extends Controller
             'description' => 'required',
         ]);
 
-        $task = Task::create(['title' => $request->title,'description' => $request->description]);
+        $task = Task::create([
+            'title' => $request->title,
+            'description' => $request->description
+        ]);
         return redirect('/tasks/'.$task->id);
     }
 
